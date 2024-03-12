@@ -69,18 +69,18 @@ RUN apt-get update && \
 # Install Python packages
 RUN conda install -n deepmimic tensorflow=1.13.1 && \
     pip install PyOpenGL PyOpenGL_accelerate mpi4py numpy
-
+RUN clang++ -v -E
 # Set working directory
 WORKDIR /workspace
 
 # Clone the repository
-RUN git clone https://github.com/xbpeng/DeepMimic.git
+RUN git clone https://github.com/yh2371/DM_HW.git
 
-RUN clang++ -v -E
+
 # Build the necessary components
-RUN cd DeepMimic/DeepMimicCore && \
-     source build.sh && \
-     make python
+RUN cd DM_HW/DeepMimicCore && \
+    source build.sh && \
+    make python
 
 # Set entrypoint to run bash
 ENTRYPOINT ["bash"]
