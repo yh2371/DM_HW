@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -pedantic -rdynamic CMakeFiles/multi-touch.dir/progs/demos/multi-touch/multi-touch.c.o -o bin/multi-touch  -Wl,-rpath,/home/penn-cg-workstation1/yh/DeepMimic/freeglut-3.0.0/lib -lGLU -lGL -lm -lX11 -lXext -lXrandr -lXi -lm lib/libglut.so.3.10.0 -lGL -lm -lX11 -lXext -lXrandr -lXi 

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
+export CPATH=/opt/conda/envs/deepmimic/include/python3.6m:$CPATH
+export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
+
 echo "DeepMimic Linux script to download, build the dependencies and the core library"
 
 debian() {
@@ -92,7 +96,7 @@ freeglut() {
 }
 
 glew() {
-  download https://downloads.sourceforge.net/project/glew/glew/2.1.0/glew-2.1.0.tgz
+  download https://sourceforge.net/projects/glew/files/glew/2.1.0/glew-2.1.0.tgz/download
   if [ ! -d glew-2.1.0 ]; then
     tar -xzf glew-2.1.0.tgz || exit 1
   fi

@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -pedantic -rdynamic CMakeFiles/smooth_opengl3.dir/progs/demos/smooth_opengl3/smooth_opengl3.c.o -o bin/smooth_opengl3  -Wl,-rpath,/home/penn-cg-workstation1/yh/DeepMimic/freeglut-3.0.0/lib -lGLU -lGL -lm -lX11 -lXext -lXrandr -lXi -lm lib/libglut.so.3.10.0 -lGL -lm -lX11 -lXext -lXrandr -lXi 

@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -pedantic -rdynamic CMakeFiles/Fractals_random.dir/progs/demos/Fractals_random/fractals_random.c.o -o bin/Fractals_random  -Wl,-rpath,/home/penn-cg-workstation1/yh/DeepMimic/freeglut-3.0.0/lib -lGLU -lGL -lm -lX11 -lXext -lXrandr -lXi -lm lib/libglut.so.3.10.0 -lGL -lm -lX11 -lXext -lXrandr -lXi 
