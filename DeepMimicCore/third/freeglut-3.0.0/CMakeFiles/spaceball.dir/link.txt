@@ -1,1 +1,0 @@
-/usr/bin/cc  -Wall -pedantic -rdynamic CMakeFiles/spaceball.dir/progs/demos/spaceball/spaceball.c.o CMakeFiles/spaceball.dir/progs/demos/spaceball/vmath.c.o -o bin/spaceball  -Wl,-rpath,/home/penn-cg-workstation1/yh/DeepMimic/freeglut-3.0.0/lib -lGLU -lGL -lm -lX11 -lXext -lXrandr -lXi -lm lib/libglut.so.3.10.0 -lGL -lm -lX11 -lXext -lXrandr -lXi 

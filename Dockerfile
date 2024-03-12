@@ -71,10 +71,10 @@ RUN conda install -n deepmimic tensorflow=1.13.1 && \
     pip install PyOpenGL PyOpenGL_accelerate mpi4py numpy
 
 RUN apt-get update
-RUN apt-get install gcc-snapshot -y 
+
 WORKDIR /workspace
 # Set working directory
-
+RUN apt-get install gcc-snapshot -y 
 
 # Clone the repository
 RUN git clone https://github.com/yh2371/DM_HW.git
