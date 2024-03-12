@@ -30,6 +30,5 @@ external/
 Backup/
 data/intermediate/
 DeepMimicCore/objs/
-DeepMimicCore/third
 
 DeepMimicCore/DeepMimicCore.py

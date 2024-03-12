@@ -60,7 +60,7 @@ ENV CONDA_DEFAULT_ENV=deepmimic
 ENV CONDA_PREFIX=/opt/conda/envs/$CONDA_DEFAULT_ENV
 ENV PATH=$CONDA_PREFIX/bin:$PATH
 ENV LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/:/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"
-
+RUN clang++ -v -E
 # Install pthreads
 RUN apt-get update && \
     apt-get install -y libpthread-stubs0-dev libopenmpi-dev libxi-dev && \
@@ -69,7 +69,7 @@ RUN apt-get update && \
 # Install Python packages
 RUN conda install -n deepmimic tensorflow=1.13.1 && \
     pip install PyOpenGL PyOpenGL_accelerate mpi4py numpy
-RUN clang++ -v -E
+
 RUN apt-get update
 WORKDIR /workspace
 # Set working directory
@@ -79,10 +79,11 @@ WORKDIR /workspace
 RUN git clone https://github.com/yh2371/DM_HW.git
 
 
+RUN apt-get install gcc-snapshot -y 
 # Build the necessary components
-# RUN cd DM_HW/DeepMimicCore && \
-#     source build.sh && \
-#     make python
+RUN cd DM_HW/DeepMimicCore && \
+    source build.sh && \
+    make python
 
 # Set entrypoint to run bash
 ENTRYPOINT ["bash"]

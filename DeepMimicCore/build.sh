@@ -79,24 +79,24 @@ freeglut() {
     tar -xvzf freeglut-3.0.0.tar.gz || exit 1
   fi
   cd freeglut-3.0.0
-  #if [ ! -f Makefile ]; then
-  #  cmake . -DCMAKE_INSTALL_PREFIX=install || exit 1
-  #fi
-  #if [ ! -d install ]; then
-  #  make install || exit 1
-  #fi
-  #if [ ! -f install/lib/libglut.so ]; then
-  #  echo "Cannot find libglut.so"; exit 1
-  #fi
-  #export FREEGLUT_INSTALL_DIR=$PWD/install/
-  #export FREEGLUT_INC_DIR=$PWD/install/include
-  #export FREEGLUT_LIB_DIR=$PWD/install/lib
-  #echo "Freeglut built and installed in $PWD/install"
-  #cd $THIRD
+  if [ ! -f Makefile ]; then
+    cmake . -DCMAKE_INSTALL_PREFIX=install || exit 1
+  fi
+  if [ ! -d install ]; then
+    make install || exit 1
+  fi
+  if [ ! -f install/lib/libglut.so ]; then
+    echo "Cannot find libglut.so"; exit 1
+  fi
+  export FREEGLUT_INSTALL_DIR=$PWD/install/
+  export FREEGLUT_INC_DIR=$PWD/install/include
+  export FREEGLUT_LIB_DIR=$PWD/install/lib
+  echo "Freeglut built and installed in $PWD/install"
+  cd $THIRD
 }
 
 glew() {
-  download https://sourceforge.net/projects/glew/files/glew/2.1.0/glew-2.1.0.tgz/download
+  download https://downloads.sourceforge.net/project/glew/glew/2.1.0/glew-2.1.0.tgz
   if [ ! -d glew-2.1.0 ]; then
     tar -xzf glew-2.1.0.tgz || exit 1
   fi
