@@ -1,9 +1,5 @@
 #!/bin/bash
 
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
-export CPATH=/opt/conda/envs/deepmimic/include/python3.6m:$CPATH
-export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
-
 echo "DeepMimic Linux script to download, build the dependencies and the core library"
 
 debian() {
