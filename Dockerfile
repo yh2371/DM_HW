@@ -74,12 +74,12 @@ RUN apt-get update
 WORKDIR /workspace
 # Set working directory
 
-
+RUN apt-get install gcc-snapshot -y 
 # Clone the repository
 RUN git clone https://github.com/yh2371/DM_HW.git
 
 
-RUN apt-get install gcc-snapshot -y 
+
 # Build the necessary components
 RUN cd DM_HW/DeepMimicCore && \
     source build.sh && \
