@@ -70,14 +70,14 @@ GL() {
 }
 
 freeglut() {
-  #download https://downloads.sourceforge.net/project/freeglut/freeglut/3.0.0/freeglut-3.0.0.tar.gz
-  #if [ ! -d freeglut-3.0.0 ]; then
-  #  tar -xvzf freeglut-3.0.0.tar.gz || exit 1
-  #fi
-  gdown 1oZ9i390LXvVdPQozzW0vo2QFmjaC-4-2
+  download https://downloads.sourceforge.net/project/freeglut/freeglut/3.0.0/freeglut-3.0.0.tar.gz
   if [ ! -d freeglut-3.0.0 ]; then
-    tar -xf freeglut-3.0.0.tar.xz || exit 1
+    tar -xvzf freeglut-3.0.0.tar.gz || exit 1
   fi
+  #gdown 1oZ9i390LXvVdPQozzW0vo2QFmjaC-4-2
+  #if [ ! -d freeglut-3.0.0 ]; then
+  #  tar -xf freeglut-3.0.0.tar.xz || exit 1
+  #fi
   cd freeglut-3.0.0
   if [ ! -f Makefile ]; then
     cmake . -DCMAKE_INSTALL_PREFIX=install || exit 1
